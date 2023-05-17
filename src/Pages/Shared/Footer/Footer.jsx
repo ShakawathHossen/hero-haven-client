@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className="bg-[#F7B801] text-[#283149] md:text-start text-center">
                 <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 flex flex-wrap justify-between">
                     <div className="w-full md:w-4/12 mb-4 md:mb-0 flex items-center md:items-start  flex-col md:justify-start justify-center">
-                        <img className='md:w-48 w-40' src="https://i.ibb.co/cDLbPZq/herohaven1-png-removebg-preview.png" alt="" />
+                        <img className='w-40' src="https://i.ibb.co/cDLbPZq/herohaven1-png-removebg-preview.png" alt="" />
                         <p className='md:w-11/12  '>Welcome to Hero Haven, the ultimate destination for action figure enthusiasts! At Hero Haven, we understand the passion and excitement that comes with collecting and immersing oneself in the world of action figures. Our shop is a haven where heroes come to life, and dreams take flight.</p>
                     </div>
                     <div className="w-full md:w-3/12 mb-4 md:mb-0">

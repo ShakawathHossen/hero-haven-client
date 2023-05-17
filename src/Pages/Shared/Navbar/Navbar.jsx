@@ -6,49 +6,51 @@ import { Transition } from '@headlessui/react';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <nav className="bg-[#283149] ">
+        <nav className="bg-[#283149]">
       <div className=" px-4 sm:px-6 container mx-auto ">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
             <div className="flex-shrink-0">
+              <Link to='/'>
               <img
                 className="h-10"
                 src="https://i.ibb.co/K6FWZtt/herohaven1-png.jpg"
                 alt="Website Logo"
               />
+              </Link>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a
+          <div>
+          <div className="hidden md:block">
+              <div className="flex items-baseline space-x-4">
+                <NavLink to='/'
                   href="#"
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
                 >
                   Home
-                </a>
-                <a
+                </NavLink>
+                <NavLink
                   href="#"
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
                   All Toys
-                </a>
-                <a
+                </NavLink>
+                <NavLink
                   href="#"
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
                 >
                   My Toys
-                </a>
-                <a
+                </NavLink>
+                <NavLink
                   href="#"
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
                   Add A Toy
-                </a>
-                <a
+                </NavLink>
+                <NavLink
                   href="#"
-                  className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
                   Blogs
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -59,10 +61,10 @@ const Navbar = () => {
                 src="/path/to/profile-picture.jpg"
                 alt="User Profile Picture"
               />
-              <button className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium">
                 Login
               </button>
-              <button className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                 Logout
               </button>
             </div>
@@ -124,30 +126,30 @@ const Navbar = () => {
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
+              <NavLink
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Home
-              </a>
-              <a
+              </NavLink>
+              <NavLink
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 All Toys
-              </a>
-              <a
+              </NavLink>
+              <NavLink
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 My Toys
-              </a>
-              <a
+              </NavLink>
+              <NavLink
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add A Toy
-              </a>
+              </NavLink>
               <a
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
