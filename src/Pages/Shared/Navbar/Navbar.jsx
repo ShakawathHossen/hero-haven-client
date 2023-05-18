@@ -42,25 +42,25 @@ const Navbar = () => {
                 >
                   Home
                 </NavLink>
-                <NavLink
+                <NavLink to='/all-toys'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
                   All Toys
                 </NavLink>
-                <NavLink to='/mytoys'
+                <NavLink to='/my-toys'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
                 >
                   My Toys
                 </NavLink>
-                <NavLink
+                <NavLink to='/add-toy'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
                   Add A Toy
                 </NavLink>
-                <NavLink
+                <NavLink to='/blogs'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
                 >
@@ -80,10 +80,10 @@ const Navbar = () => {
 
               }
               {user?
-                <button onClick={handleLogOut} className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                <button onClick={handleLogOut} className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                   Logout</button> :
                 <Link to='/login'>
-                  <button  className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                  <button  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                     Login
                   </button>
                 </Link>
