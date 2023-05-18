@@ -61,9 +61,11 @@ const Navbar = () => {
                 src="/path/to/profile-picture.jpg"
                 alt="User Profile Picture"
               />
+              <Link to='login'>
               <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium">
                 Login
               </button>
+              </Link>
               <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                 Logout
               </button>
