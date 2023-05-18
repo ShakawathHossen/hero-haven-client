@@ -10,6 +10,8 @@ import AuthProviders from './Providers/AuthProviders.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <div>
+    <AuthProviders>
       <RouterProvider router={router} />
-      </div>
+    </AuthProviders>
+  </div>
 )

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProviders';
+import { ToastContainer, toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
-    // const {createUser}= useContext(AuthContext);
+    const {createUser}= useContext(AuthContext);
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -14,13 +17,19 @@ const Registration = () => {
         const signUpInfo= {name,photoURL,email,password}
         console.log(signUpInfo);
 
-        // createUser(email,password)
-        // .then(result=>{
-        //     const user = result.user;
-        // })
-        // .catch((error) => {
-        //    console.log(error);
-        //   });
+        createUser(email,password)
+        .then(result=>{
+            const user = result.user;
+            Swal.fire({
+                title: 'Registation Successfull',
+                text: 'Continue your browsing',
+                icon: 'success',
+                confirmButtonText: 'Thanks'
+              })
+        })
+        .catch((error) => {
+           console.log(error);
+          });
       };
 
 
@@ -28,6 +37,18 @@ const Registration = () => {
 
     return (
         <div>
+             <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         <div className=' mx-auto container'>
             
             <div className=" mx-auto flex md:flex-row flex-col-reverse  items-center md:p-16 py-8 ">
@@ -73,7 +94,7 @@ const Registration = () => {
                     </div>
                 </div>
                 <div className="md:w-1/2 flex justify-center">
-                    <img src="https://i.ibb.co/drLzxR3/wepik-export-20230518065838-SPSb.png" alt="About Us Image" className="md:w-10/12 w-3/4 animate-pulse " />
+                    <img src="https://i.ibb.co/drLzxR3/wepik-export-20230518065838-SPSb.png" alt="About Us Image" className="md:w-10/12 w-3/4  " />
                 </div>
             </div>
         </div>
