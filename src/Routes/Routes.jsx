@@ -8,6 +8,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToys from "../Pages/AllToys/AllToys";
 import Blogs from "../Pages/Blogs/Blogs";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -44,5 +45,10 @@ const router = createBrowserRouter([
         },
       ]
     },
+    {
+      path: "*",
+      element:<ErrorPage/>
+  
+    }
 ]);
 export default router;
