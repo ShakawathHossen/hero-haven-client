@@ -5,10 +5,9 @@ const PopularThemes = () => {
         <div className='bg-white '>
           <div className="grid grid-cols-12 container mx-auto gap-6" >
             <div className="md:col-span-3 col-span-12 relative">
-                <div className='bg-[#283149] md:h-full h-36 flex flex-col items-center justify-center animate-pulse'>
-                    <h1 className='text-white mb-2'>Find Your Favorite</h1>
-                    <h1  className='text-[#F7B801] mb-3  md:text-5xl text-3xl md:w-7/12 w-2/3font-[Josefin Sans] italic  font-bold'>Theme</h1>
-                    <h1 className='text-white'>Action Figures</h1>
+                <div className='bg-[#283149] md:h-full h-36 flex flex-col justify-center'>
+                    <h1  className='text-[#F7B801] mb-3  md:text-5xl tracking-wide text-3xl custom-font text-center font-bold'>ALL YOUR <br></br> FAVORITE BRANDS</h1>
+                    <h1 className='text-white text-sm text-center tracking-widest font-semibold uppercase '>See All Brands</h1>
                 </div>
             </div>
             <div  className="md:col-span-9 col-span-12">
