@@ -26,10 +26,10 @@ const Login = () => {
         <div>
             <div className=' mx-auto container'>
                 <div className=" mx-auto lg:flex lg:flex-row items-center md:p-16 py-8 ">
-                    <div className="md:w-1/2">
-                        <img src="https://i.ibb.co/g7KJfY8/Frame.png" alt="About Us Image" className="md:w-10/12 object-cover" />
+                    <div className="md:w-1/2 flex  justify-center">
+                        <img src="https://i.ibb.co/rxY7xWQ/wepik-export-20230518061558-NNBD.png" alt="About Us Image" className="md:w-72 w-2/4 animate-pulse " />
                     </div>
-                    <div className="md:w-1/2 w-full border shadow rounded md:px-10">
+                    <div className="md:w-1/2 w-11/12 mx-auto border shadow-2xl bg-[#ffffff] rounded-lg md:px-10 px-2">
                         <div className="card flex-shrink-0 w-full">
                             <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control ">
@@ -69,7 +69,7 @@ const Login = () => {
                                         </button>
                                     </div>
                                     <div>
-                                        <p className='text-sm'>New to <span className='font-semibold text-[#283149]'>Hero Haven</span> ?<Link to="/auth/signup"><button className="btn btn-active btn-link normal-case text-sm text-sky-700 ">Registration Here</button>
+                                        <p className='text-sm'>New to <span className='font-semibold text-[#283149]'>Hero Haven</span> ?<Link to="/registration"><button className="btn btn-active btn-link normal-case text-sm text-sky-700 ">Registration Here</button>
                                         </Link></p>
                                     </div>
                                 </div>
