@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
+import { AuthContext } from '../../../Providers/AuthProviders';
 
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-        <nav className="bg-[#283149]">
+  const [isOpen, setIsOpen] = useState(false);
+
+  // handle logout 
+
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then() 
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
+
+  // handle logout 
+  return (
+    <nav className="bg-[#283149]">
       <div className=" px-4 sm:px-6 container mx-auto ">
         <div className="flex items-center justify-between h-16">
-            <div className="flex-shrink-0">
-              <Link to='/'>
+          <div className="flex-shrink-0">
+            <Link to='/'>
               <img
                 className="h-10"
                 src="https://i.ibb.co/K6FWZtt/herohaven1-png.jpg"
                 alt="Website Logo"
               />
-              </Link>
-            </div>
+            </Link>
+          </div>
           <div>
-          <div className="hidden md:block">
+            <div className="hidden md:block">
               <div className="flex items-baseline space-x-4">
                 <NavLink to='/'
                   href="#"
@@ -33,7 +48,7 @@ const Navbar = () => {
                 >
                   All Toys
                 </NavLink>
-                <NavLink
+                <NavLink to='/mytoys'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
                 >
@@ -56,19 +71,23 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center md:ml-6">
-              <img
-                className="h-8 w-8 rounded-full"
-                src="/path/to/profile-picture.jpg"
-                alt="User Profile Picture"
-              />
-              <Link to='login'>
-              <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium">
-                Login
-              </button>
-              </Link>
-              <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
-                Logout
-              </button>
+              {user &&
+                <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+
+                  <img className='rounded-full w-8' src= {user.photoURL} />
+
+                </div>
+
+              }
+              {user?
+                <button onClick={handleLogOut} className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                  Logout</button> :
+                <Link to='/login'>
+                  <button  className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                    Login
+                  </button>
+                </Link>
+              }
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -103,7 +122,7 @@ const Navbar = () => {
                   stroke="currentColor"
                   aria-hidden="true"
                 >
-                                      <path
+                  <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
@@ -178,12 +197,17 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="mt-3 px-2 space-y-1">
-                <button className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
-                  Login
-                </button>
-                <button className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
-                  Logout
-                </button>
+
+
+                {user?
+                  <button className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                    Logout</button> :
+                  <Link to='login'>
+                    <button onClick={handleLogOut} className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                      Login
+                    </button>
+                  </Link>
+                }
               </div>
             </div>
           </div>
@@ -192,5 +216,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default Navbar;

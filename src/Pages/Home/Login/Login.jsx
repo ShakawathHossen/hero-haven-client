@@ -1,25 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProviders';
+import Swal from 'sweetalert2';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../../firebase/firebase.config';
 
 const Login = () => {
+
+    const {signIn}= useContext(AuthContext)
+    const nevigate= useNavigate();
+    const location = useLocation()
+    const from=location.state?.from.pathname || '/'
+    const Auth=getAuth(app);
+    const googleProvider= new GoogleAuthProvider();
+
+     // google sign in 
+
+     const handleGoogleSignIn=()=>{
+        signInWithPopup(Auth,googleProvider)
+        .then(result=>{
+            const loggedInUser=result.data;
+            nevigate(from,{replace:true})
+            alert('Successfully logged in');
+
+        })
+        .catch(err=>{console.log(err);});
+    }
+
+    // google sign in 
+
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        signIn(email, password)
-            // .then(result => {
-            //     const user = result.user;
-            //     alert('Login Successfully');
-            // })
-            // .catch((error) => {
-            //     console.log(error);
-            // });
         if (password.length < 6) {
-            alert('Password should be minimum 6 characters');
+            alert('Password Must be at least 6 characters');
             return;
         }
+
+       
+
+        // email password sign in 
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                nevigate(from,{replace:true})
+                Swal.fire({
+                    title: 'login Successfull',
+                    text: 'Continue your browsing',
+                    icon: 'success',
+                    confirmButtonText: 'Thanks'
+                  })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        
     }
 
     return (
@@ -60,7 +100,7 @@ const Login = () => {
                                 <div className='text-center  mt-6'>
                                     <p className='text-lg  divider '>Or Connect With</p>
                                     <div className='my-4'>
-                                        <button className='px-4'>
+                                        <button onClick={handleGoogleSignIn}  className='px-4'>
                                             <img className='w-10' src="https://i.ibb.co/ftwyb00/Google-G-Logo-svg.png" alt="" />
                                         </button>
                                         <button className='px-4'>
