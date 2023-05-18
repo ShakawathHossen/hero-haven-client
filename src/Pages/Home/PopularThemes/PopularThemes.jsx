@@ -2,16 +2,16 @@ import React from 'react';
 
 const PopularThemes = () => {
     return (
-        <div className='bg-white '>
-          <div className="grid grid-cols-12 container mx-auto gap-6" >
-            <div className="md:col-span-3 col-span-12 relative">
+        <div className='md:py-10 '>
+          <div className="grid grid-cols-12 container mx-auto gap-6 bg-white " >
+            <div className="md:col-span-3 col-span-12 ">
                 <div className='bg-[#283149] md:h-full h-36 flex flex-col justify-center'>
                     <h1  className='text-[#F7B801] mb-3  md:text-5xl tracking-wide text-3xl custom-font text-center font-bold'>ALL YOUR <br></br> FAVORITE BRANDS</h1>
                     <h1 className='text-white text-sm text-center tracking-widest font-semibold uppercase '>See All Brands</h1>
                 </div>
             </div>
             <div  className="md:col-span-9 col-span-12">
-            <div className='grid md:grid-cols-6 grid-cols-4 md:gap-12 gap-6 md:p-0 px-6'>
+            <div className='grid md:grid-cols-6 grid-cols-4 md:gap-12 gap-6 md:p-10 px-6'>
                 <div>
                     <img  src="https://i.ibb.co/hLyBwDS/brands-harrypotter.png" alt="" />
                 </div>

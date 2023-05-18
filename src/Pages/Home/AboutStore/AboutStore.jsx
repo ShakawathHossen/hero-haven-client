@@ -3,10 +3,10 @@ import React from 'react';
 const AboutStore = () => {
     return (
         <div>
-            <div className='my-12 container mx-auto'>
+            <div className='md:my-8 container mx-auto'>
                 <div className="container mx-auto lg:flex lg:flex-row items-center">
                     <div className="md:w-1/2">
-                        <img src="https://i.ibb.co/f14b29P/10001-removebg-preview-1.png" alt="About Us Image" className="object-cover " />
+                        <img src="https://i.ibb.co/f14b29P/10001-removebg-preview-1.png" alt="About Us Image" className="object-cover w-11/12 " />
                     </div>
                     <div className="md:w-1/2 ">
                         <div className="my-8 lg:my-0">
