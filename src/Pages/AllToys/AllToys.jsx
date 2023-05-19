@@ -7,6 +7,7 @@ const AllToys = () => {
     const [showAll, setShowAll] = useState(false);
     const alltoys = useLoaderData();
     const [searchValue, setSearchValue] = useState('');
+    const [selectedToy, setSelectedToy] = useState(null);
 
     const displayedToys = showAll ? alltoys : alltoys.slice(0, 6);
 
@@ -16,6 +17,14 @@ const AllToys = () => {
 
     const handleSearchChange = (event) => {
         setSearchValue(event.target.value);
+    };
+
+    const handleViewDetails = (toy) => {
+        setSelectedToy(toy);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedToy(null);
     };
 
     const filteredToys = displayedToys.filter((toy) =>
@@ -66,7 +75,7 @@ const AllToys = () => {
                                 <td className="py-4 whitespace-nowrap text-center">{toy.price}</td>
                                 <td className="py-4 whitespace-nowrap text-center">{toy.quantity}</td>
                                 <td className="py-4 whitespace-nowrap">
-                                    <button className="custom-button2">
+                                    <button className="custom-button2  " onClick={() => handleViewDetails(toy)}>
                                         View Details
                                     </button>
                                 </td>
@@ -81,6 +90,48 @@ const AllToys = () => {
                     <button className="custom-button" onClick={handleSeeMore}>
                         See More
                     </button>
+                </div>
+            )}
+
+            {selectedToy && (
+                <div className="fixed inset-0 flex items-center justify-center z-50">
+                    <div className="bg-white p-8 max-w-5xl mx-auto rounded shadow-lg relative">
+                        <button
+                            className="absolute top-4 right-4 text-black hover:text-gray-800"
+                            onClick={handleCloseModal}
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </button>
+                        <div className='grid md:grid-cols-5 grid-cols-1 gap-4 items-center '>
+                            <div className='col-span-2 mx-auto'>
+                                <img src={selectedToy.photo} alt='' className="md:w-40 w-20 " />
+                            </div>
+
+
+                            <div className='col-span-3'>
+                                <p className="text-2xl leading-10 font-semibold">{selectedToy.figureName}</p>
+                                <p className="leading-10 "><span className='font-bold'>Seller :</span> {selectedToy.sellerName}</p>
+                                <p className="leading-8 "><span className='font-bold'>Price :</span> ${selectedToy.price}</p>
+                                <p className="leading-7 "><span className='font-bold'>Details :</span> {selectedToy.details}</p>
+                                {/* Additional toy details can be added here */}
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
             )}
         </div>
