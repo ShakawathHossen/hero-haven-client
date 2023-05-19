@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Pdf from "react-to-pdf";
 
 const ref = React.createRef();
@@ -7,6 +8,10 @@ const Blogs = () => {
     return (
 
         <div className='container mx-auto md:my-16'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Hero Haven-Blogs</title>
+            </Helmet>
             <div>
                 <div className='text-end'>
                     <Pdf targetRef={ref} filename="blogs.pdf">

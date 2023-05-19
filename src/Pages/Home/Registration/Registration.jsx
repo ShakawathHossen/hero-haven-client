@@ -4,6 +4,7 @@ import { AuthContext } from '../../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { getAuth } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
+import { Helmet } from 'react-helmet';
 
 const Registration = () => {
     const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -53,7 +54,12 @@ const Registration = () => {
 
 
     return (
+        
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Hero Haven-Registration</title>
+            </Helmet>
             <div className=' mx-auto container'>
 
                 <div className=" mx-auto flex md:flex-row flex-col-reverse  items-center md:p-16 py-8 ">

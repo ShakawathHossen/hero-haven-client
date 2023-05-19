@@ -4,6 +4,7 @@ import { Transition } from '@headlessui/react';
 import { AuthContext } from '../../../Providers/AuthProviders';
 
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,6 +23,7 @@ const Navbar = () => {
   // handle logout 
   return (
     <nav className="bg-[#283149]">
+
       <div className=" px-4 sm:px-6 container mx-auto ">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
@@ -35,7 +37,7 @@ const Navbar = () => {
           </div>
           <div>
             <div className="hidden md:block">
-              <div className="flex items-baseline space-x-4">
+             {user? <div className="flex items-baseline space-x-4">
                 <NavLink to='/'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
@@ -66,7 +68,32 @@ const Navbar = () => {
                 >
                   Blogs
                 </NavLink>
-              </div>
+              </div>:
+               <div className="flex items-baseline space-x-4">
+               <NavLink to='/'
+                 href="#"
+                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
+               >
+                 Home
+               </NavLink>
+               <NavLink to='/all-toys'
+                 href="#"
+                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
+               >
+                 All Toys
+               </NavLink>
+               <NavLink to='/blogs'
+                 href="#"
+                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
+               >
+                 Blogs
+               </NavLink>
+             </div>
+              
+              
+              
+              
+              }
             </div>
           </div>
           <div className="hidden md:block">
