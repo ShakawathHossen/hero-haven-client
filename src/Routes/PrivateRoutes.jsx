@@ -8,9 +8,9 @@ const PrivateRoutes = ({children}) => {
 
     if(loading){
         return <div className='flex justify-center items-center py-12'>
-        <div className='radial-progress text-orange-500' style={{"--value":100,"--size": "50px", "--thickness": "5px"}}>    
+        <div className='radial-progress text-[#F7B801]' style={{"--value":100,"--size": "50px", "--thickness": "5px"}}>    
         </div>
-        <div className='animate-spin radial-progress absolute text-white' style={{"--value":15,"--size": "50px", "--thickness": "5px"}}>
+        <div className='animate-spin radial-progress absolute text-[#283149]' style={{"--value":15,"--size": "50px", "--thickness": "5px"}}>
             
         </div>
     </div>;
