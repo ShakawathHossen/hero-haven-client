@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
@@ -11,9 +11,11 @@ const Login = () => {
     const {signIn}= useContext(AuthContext)
     const nevigate= useNavigate();
     const location = useLocation()
-    const from=location.state?.from.pathname || '/'
+    const from=location.state?.from.pathname || '/all-toys'
     const Auth=getAuth(app);
     const googleProvider= new GoogleAuthProvider();
+
+
 
      // google sign in 
 
@@ -41,9 +43,6 @@ const Login = () => {
             alert('Password Must be at least 6 characters');
             return;
         }
-
-       
-
         // email password sign in 
         signIn(email, password)
             .then(result => {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { FaBeer, FaUser, FaUserCircle } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const AllToys = () => {
+    const { user } = useContext(AuthContext);
     const [showAll, setShowAll] = useState(false);
     const alltoys = useLoaderData();
     const [searchValue, setSearchValue] = useState('');
@@ -20,8 +21,12 @@ const AllToys = () => {
     };
 
     const handleViewDetails = (toy) => {
-        setSelectedToy(toy);
-    };
+        if (!user) {
+          window.location.href = '/login';
+        } else {
+          setSelectedToy(toy);
+        }
+      };
 
     const handleCloseModal = () => {
         setSelectedToy(null);
