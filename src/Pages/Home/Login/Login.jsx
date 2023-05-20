@@ -11,7 +11,7 @@ const Login = () => {
     const {signIn}= useContext(AuthContext)
     const nevigate= useNavigate();
     const location = useLocation()
-    const from=location.state?.from.pathname || '/all-toys'
+    const from=location.state?.from.pathname || '/'
     const Auth=getAuth(app);
     const googleProvider= new GoogleAuthProvider();
 
