@@ -13,12 +13,12 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
-      .then() 
+      .then()
       .catch((err) => {
         console.log(err);
       });
   };
-  
+
 
   // handle logout 
   return (
@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
           <div>
             <div className="hidden md:block">
-             {user? <div className="flex items-baseline space-x-4">
+              {user ? <div className="flex items-baseline space-x-4">
                 <NavLink to='/'
                   href="#"
                   className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
@@ -68,31 +68,31 @@ const Navbar = () => {
                 >
                   Blogs
                 </NavLink>
-              </div>:
-               <div className="flex items-baseline space-x-4">
-               <NavLink to='/'
-                 href="#"
-                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
-               >
-                 Home
-               </NavLink>
-               <NavLink to='/all-toys'
-                 href="#"
-                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
-               >
-                 All Toys
-               </NavLink>
-               <NavLink to='/blogs'
-                 href="#"
-                 className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
-               >
-                 Blogs
-               </NavLink>
-             </div>
-              
-              
-              
-              
+              </div> :
+                <div className="flex items-baseline space-x-4">
+                  <NavLink to='/'
+                    href="#"
+                    className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium"
+                  >
+                    Home
+                  </NavLink>
+                  <NavLink to='/all-toys'
+                    href="#"
+                    className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
+                  >
+                    All Toys
+                  </NavLink>
+                  <NavLink to='/blogs'
+                    href="#"
+                    className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3  font-medium"
+                  >
+                    Blogs
+                  </NavLink>
+                </div>
+
+
+
+
               }
             </div>
           </div>
@@ -101,16 +101,16 @@ const Navbar = () => {
               {user &&
                 <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
 
-                  <img className='rounded-full w-8' src= {user.photoURL} />
+                  <img className='rounded-full w-8' src={user.photoURL} />
 
                 </div>
 
               }
-              {user?
+              {user ?
                 <button onClick={handleLogOut} className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                   Logout</button> :
                 <Link to='/login'>
-                  <button  className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
+                  <button className="text-white hover:text-[#F7B801] hover:underline duration-300 px-3 font-medium">
                     Login
                   </button>
                 </Link>
@@ -173,64 +173,94 @@ const Navbar = () => {
       >
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
-            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <NavLink
+            {user ? <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <NavLink to='/'
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Home
               </NavLink>
-              <NavLink
+              <NavLink to='/all-toys'
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 All Toys
               </NavLink>
-              <NavLink
+              <NavLink to='/my-toys'
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 My Toys
               </NavLink>
-              <NavLink
+              <NavLink to='/add-toy'
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Add A Toy
               </NavLink>
-              <a
+              <NavLink to='/blogs'
                 href="#"
                 className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               >
                 Blogs
-              </a>
-            </div>
+              </NavLink>
+            </div> :
+
+
+
+
+
+              <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <NavLink to='/'
+                  href="#"
+                  className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Home
+                </NavLink>
+                <NavLink to='/all-toys'
+                  href="#"
+                  className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  All Toys
+                </NavLink>
+
+                <NavLink to='/blogs'
+                  href="#"
+                  className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Blogs
+                </NavLink>
+              </div>
+            }
             <div className="pt-4 pb-3 border-t border-gray-700">
-              <div className="flex items-center px-5">
+              {
+                user &&
+                <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
                   <img
                     className="h-10 w-10 rounded-full"
-                    src="/path/to/profile-picture.jpg"
+                    src={user.photoURL}
                     alt="User Profile Picture"
                   />
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium leading-none text-white">
-                    John Doe
+                  {user.displayName}
                   </div>
                   <div className="text-sm font-medium leading-none text-gray-400">
-                    john.doe@example.com
+                  {user.email}
                   </div>
                 </div>
               </div>
+              }
               <div className="mt-3 px-2 space-y-1">
 
 
-                {user?
-                  <button className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                {user ?
+                  <button onClick={handleLogOut} className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                     Logout</button> :
-                  <Link to='login'>
-                    <button onClick={handleLogOut} className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
+                  <Link to='/login'>
+                    <button  className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">
                       Login
                     </button>
                   </Link>
