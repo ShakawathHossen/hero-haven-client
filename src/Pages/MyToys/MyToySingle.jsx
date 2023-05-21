@@ -23,7 +23,7 @@ const MyToySingle = ({ toy, myToys, setMyToys }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/toy/${_id}`, {
+                fetch(`https://hero-haven-server-two.vercel.app/toy/${_id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -46,35 +46,35 @@ const MyToySingle = ({ toy, myToys, setMyToys }) => {
     }
 
     return (
-<div className="overflow-x-auto">
-        <table className="min-w-full bg-white border">
-            <thead>
-                <tr >
-                    <td  className="px-6 py-3 whitespace-nowrap">
-                        <img src={photo} alt='' className="h-16" />
-                    </td >
-                    <td  className="px-8 py-3  whitespace-nowrap">{figureName}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap ">{sellerEmail}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap ">{sellerName}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap ">{subCategory}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap ">{price}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap">{quantity}</td >
-                    <td  className="px-6 py-3 whitespace-nowrap">
-                        <Link to={`/toy/${_id}`}>
+        <div className="overflow-x-auto">
+            <table className="min-w-full bg-white border">
+                <thead>
+                    <tr >
+                        <td className="px-6 py-3 whitespace-nowrap">
+                            <img src={photo} alt='' className="h-16" />
+                        </td >
+                        <td className="px-8 py-3  whitespace-nowrap">{figureName}</td >
+                        <td className="px-6 py-3 whitespace-nowrap ">{sellerEmail}</td >
+                        <td className="px-6 py-3 whitespace-nowrap ">{sellerName}</td >
+                        <td className="px-6 py-3 whitespace-nowrap ">{subCategory}</td >
+                        <td className="px-6 py-3 whitespace-nowrap ">{price}</td >
+                        <td className="px-6 py-3 whitespace-nowrap">{quantity}</td >
+                        <td className="px-6 py-3 whitespace-nowrap">
+                            <Link to={`/toy/${_id}`}>
 
-                            <button >
-                                <img src="https://i.ibb.co/G08dvDK/edit-button.png" alt="" />
+                                <button >
+                                    <img src="https://i.ibb.co/G08dvDK/edit-button.png" alt="" />
 
+                                </button>
+                            </Link>
+                            <button onClick={() => handleDelete(_id)} className="ml-4 ">
+                                <img src="https://i.ibb.co/b1ngMDt/delete-button.png" alt="" />
                             </button>
-                        </Link>
-                        <button onClick={() => handleDelete(_id)} className="ml-4 ">
-                            <img src="https://i.ibb.co/b1ngMDt/delete-button.png" alt="" />
-                        </button>
-                    </td >
-                </tr>
-    
-            </thead>
-        </table>
+                        </td >
+                    </tr>
+
+                </thead>
+            </table>
         </div>
 
     );

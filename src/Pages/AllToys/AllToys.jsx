@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
+import Swal from 'sweetalert2';
 
 const AllToys = () => {
     const { user } = useContext(AuthContext);
@@ -22,6 +23,13 @@ const AllToys = () => {
 
     const handleViewDetails = (toy) => {
         if (!user) {
+          
+          Swal.fire({
+            title: 'login to view details',
+            text: 'Error',
+            icon: 'error',
+            confirmButtonText: 'ok'
+          })
           window.location.href = '/login';
         } else {
           setSelectedToy(toy);
@@ -80,7 +88,7 @@ const AllToys = () => {
                                 <td className="py-4 whitespace-nowrap text-center">{toy.price}</td>
                                 <td className="py-4 whitespace-nowrap text-center">{toy.quantity}</td>
                                 <td className="py-4 whitespace-nowrap">
-                                    <button className="custom-button2  " onClick={() => handleViewDetails(toy)}>
+                                    <button className="custom-button2 " onClick={() => handleViewDetails(toy)}>
                                         View Details
                                     </button>
                                 </td>

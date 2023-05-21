@@ -12,7 +12,7 @@ const MyToys = () => {
   
 
   useEffect(() => {
-    const url = `http://localhost:5000/toy?sellerEmail=${user?.email}`;
+    const url = `https://hero-haven-server-two.vercel.app/toy?sellerEmail=${user?.email}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setLoadedToys(data))
