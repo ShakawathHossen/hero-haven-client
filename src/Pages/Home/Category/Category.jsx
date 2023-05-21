@@ -28,7 +28,7 @@ const Category = () => {
 
             <div className='container  md:px-0 px-2 mx-auto pt-6 pb-16'>
                 <div>
-                    <h1 className="text-[#283149] text-4xl custom-font md:text-5xl md:text-start text-center mb-6">Our Categories</h1>
+                    <h1 className="text-[#283149] text-4xl custom-font md:text-5xl text-center mb-6">Our Categories</h1>
                     <div className="container flex mx-auto">
                         <div className="text-center w-100 m-auto">
                             <div className="">

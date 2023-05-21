@@ -25,7 +25,12 @@ const Login = () => {
         .then(result=>{
             const loggedInUser=result.data;
             nevigate(from,{replace:true})
-            alert('Successfully logged in');
+            Swal.fire({
+                title: 'login Successfull',
+                text: 'Continue your browsing',
+                icon: 'success',
+                confirmButtonText: 'Thanks'
+              })
 
         })
         .catch(err=>{console.log(err);});
