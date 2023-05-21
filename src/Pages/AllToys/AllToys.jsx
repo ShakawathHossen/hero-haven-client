@@ -139,7 +139,7 @@ const AllToys = () => {
                                 <p className="leading-10 "><span className='font-bold'>Seller :</span> {selectedToy.sellerName}</p>
                                 <p className="leading-8 "><span className='font-bold'>Price :</span> ${selectedToy.price}</p>
                                 <p className="leading-7 "><span className='font-bold'>Details :</span> {selectedToy.details}</p>
-                                {/* Additional toy details can be added here */}
+                            
                             </div>
                         </div>
 

@@ -15,7 +15,7 @@ const Category = () => {
                 // console.log(data)
                 setCategorytoys(result);
             })
-        const result = categorytoys?.filter(job => job.subCategory === activeTab);
+        const result = categorytoys?.filter(category => category.subCategory === activeTab);
         console.log(result);
 
 
@@ -26,7 +26,7 @@ const Category = () => {
     return (
         <div>
 
-            <div className='container mx-auto'>
+            <div className='container mx-auto pt-6 pb-16'>
                 <div>
                     <h1 className="text-[#283149] text-2xl custom-font md:text-5xl md:mb-6 mb-4 text-center">Our Categories</h1>
                     <div className="container flex mx-auto">
@@ -72,8 +72,8 @@ const Category = () => {
                         </div>
                     </div>
                     <div className="container mx-auto grid md:grid-cols-4 gap-6 mt-5">
-                        {categorytoys?.map((job) => <CategorySingle key={job._id}
-                            job={job}
+                        {categorytoys?.map((category) => <CategorySingle key={category._id}
+                            category={category}
                         >
 
 
