@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import 'react-tabs/style/react-tabs.css';
+import { AuthContext } from '../../../Providers/AuthProviders';
 
 const CategorySingle = ({ category }) => {
+    const {user}= useContext(AuthContext)
+
+
+
+
     const { _id, figureName, sellerName, sellerEmail, price, subCategory, subCategoryCode, Ratings, quantity, photo, details } = category || {};
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -27,9 +33,11 @@ const CategorySingle = ({ category }) => {
                         </div>
                     </div>
                     <div className='flex justify-center'>
-                        <button onClick={openModal} className='custom-button2'>
+                         <button onClick={openModal} className='custom-button2'>
                             Details
                         </button>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -66,7 +74,7 @@ const CategorySingle = ({ category }) => {
                                 <p className="leading-8 "><span className='font-bold'>Price :</span> ${price}</p>
                                 <p className="leading-8 "><span className='font-bold'>Ratings :</span> ${Ratings}</p>
                                 <p className="leading-7 "><span className='font-bold'>Details :</span> {details}</p>
-                            
+                               
                             </div>
                         </div>
                     </div>

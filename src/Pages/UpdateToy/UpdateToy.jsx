@@ -79,13 +79,13 @@ const UpdateToy = () => {
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="figureName" className="mb-1">Figure Name</label>
-                                <input id="figureName" type="text" defaultValue={figureName} name="figureName" required placeholder={figureName} className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="figureName" type="text" value={figureName} name="figureName" required placeholder={figureName} className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="sellerName" className="mb-1">Seller Name</label>
-                                <input id="sellerName" name="sellerName" required placeholder='Enter Seller Name' defaultValue={sellerName} type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="sellerName" name="sellerName" required placeholder='Enter Seller Name' value={sellerName} type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const UpdateToy = () => {
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="sellerEmail" className="mb-1">Seller Email</label>
-                                <input id="sellerEmail" name="sellerEmail" defaultValue={sellerEmail} required placeholder='Enter Seller Email' type="email" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="sellerEmail" name="sellerEmail" value={sellerEmail} required placeholder='Enter Seller Email' type="email" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
@@ -107,13 +107,13 @@ const UpdateToy = () => {
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="subCategory" className="mb-1">Sub Category</label>
-                                <input id="subCategory" defaultValue={subCategory}  name="subCategory" required placeholder='Enter Sub Category' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="subCategory" value={subCategory}  name="subCategory" required placeholder='Enter Sub Category' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="subCategoryCode" className="mb-1">Sub Category Code</label>
-                                <input id="subCategoryCode" defaultValue={subCategoryCode}  name="subCategoryCode" required placeholder='Enter Sub Category Code' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="subCategoryCode" value={subCategoryCode}  name="subCategoryCode" required placeholder='Enter Sub Category Code' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@ const UpdateToy = () => {
                         <div className="w-full md:w-1/2">
                         <div className="flex flex-col">
                                 <label htmlFor="ratings" className="mb-1">Ratings</label>
-                                <input id="ratings" defaultValue={Ratings}  name="ratings" required placeholder='Enter Ratings' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="ratings" value={Ratings}  name="ratings" required placeholder='Enter Ratings' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const UpdateToy = () => {
                         <div className="w-full md:w-1/2">
                         <div className="flex flex-col">
                                 <label htmlFor="photo" className="mb-1">Photo</label>
-                                <input id="Photo" defaultValue={photo} name="photo" required placeholder='Enter photo URL' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="Photo" value={photo} name="photo" required placeholder='Enter photo URL' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">

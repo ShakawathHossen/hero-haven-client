@@ -23,7 +23,7 @@ const AddToy = () => {
         console.log(newToy)
 
         // send data to the server 
-        fetch('http://localhost:5000/toys',{
+        fetch('https://hero-haven-server-two.vercel.app/toys',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -79,7 +79,7 @@ const AddToy = () => {
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="sellerEmail" className="mb-1">Seller Email</label>
-                                <input id="sellerEmail" name="sellerEmail" required placeholder='Enter Seller Email' type="email" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="sellerEmail" name="sellerEmail" required placeholder='Enter Seller Email (same as user Email)' type="email" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
@@ -93,13 +93,13 @@ const AddToy = () => {
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="subCategory" className="mb-1">Sub Category</label>
-                                <input id="subCategory"  name="subCategory" required placeholder='Enter Sub Category' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="subCategory"  name="subCategory" required placeholder='Enter Sub Category(Avengers/Batman/Spiderman/Naruto)' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                         <div className="w-full md:w-1/2">
                             <div className="flex flex-col">
                                 <label htmlFor="subCategoryCode" className="mb-1">Sub Category Code</label>
-                                <input id="subCategoryCode"  name="subCategoryCode" required placeholder='Enter Sub Category Code' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
+                                <input id="subCategoryCode"  name="subCategoryCode" required placeholder='Enter Sub Category Code (1o1-1o6)' type="text" className="px-4 py-2 border rounded focus:outline-[#ffd04281]" />
                             </div>
                         </div>
                     </div>

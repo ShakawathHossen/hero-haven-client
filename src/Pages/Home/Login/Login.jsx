@@ -41,7 +41,9 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         if (password.length < 6) {
-            alert('Password Must be at least 6 characters');
+            Swal.fire(
+                'Pass need minimun 6 letter!',
+              )
             return;
         }
         // email password sign in 
@@ -58,7 +60,9 @@ const Login = () => {
                   })
             })
             .catch((error) => {
-                console.log(error);
+                Swal.fire(
+                    'User and password not matched',
+                  )
             });
         
     }

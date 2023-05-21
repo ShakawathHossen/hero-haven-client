@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import Swal from 'sweetalert2';
+import PrivateRoutes from '../../Routes/PrivateRoutes';
 
 const AllToys = () => {
     const { user } = useContext(AuthContext);
@@ -107,7 +108,9 @@ const AllToys = () => {
             )}
 
             {selectedToy && (
-                <div className="fixed inset-0 flex items-center justify-center z-50">
+
+
+<div className="fixed inset-0 flex items-center justify-center z-50">
                     <div className="bg-white p-8 max-w-5xl mx-auto rounded shadow-lg relative">
                         <button
                             className="absolute top-4 right-4 text-black hover:text-gray-800"
@@ -137,7 +140,10 @@ const AllToys = () => {
                             <div className='col-span-3'>
                                 <p className="text-2xl leading-10 font-semibold">{selectedToy.figureName}</p>
                                 <p className="leading-10 "><span className='font-bold'>Seller :</span> {selectedToy.sellerName}</p>
+                                <p className="leading-10 "><span className='font-bold'>Seller Email :</span> {selectedToy.sellerEmail}</p>
                                 <p className="leading-8 "><span className='font-bold'>Price :</span> ${selectedToy.price}</p>
+                                <p className="leading-8 "><span className='font-bold'>Quantity :</span> {selectedToy.quantity}</p>
+                                <p className="leading-8 "><span className='font-bold'>Ratings :</span> {selectedToy.Ratings}</p>
                                 <p className="leading-7 "><span className='font-bold'>Details :</span> {selectedToy.details}</p>
                             
                             </div>

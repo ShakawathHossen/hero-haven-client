@@ -20,6 +20,11 @@ const Registration = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+        if (password.length < 6) {
+            Swal.fire(
+                'Pass need minimun 6 letter!',
+              ) 
+            }
         const signUpInfo = { name, photoURL, email, password }
         console.log(signUpInfo);
         // create new user 

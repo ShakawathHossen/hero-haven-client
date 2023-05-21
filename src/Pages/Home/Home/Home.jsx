@@ -5,7 +5,6 @@ import AboutStore from '../AboutStore/AboutStore';
 import WhyShop from '../WhyShop/WhyShop';
 import { Helmet } from 'react-helmet';
 import Category from '../Category/Category';
-
 const Home = () => {
     return (
         <div>
